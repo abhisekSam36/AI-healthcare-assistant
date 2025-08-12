@@ -1,144 +1,142 @@
-# Gen AI Hackathon
+
+# AI-Powered Healthcare Assistant
 
 ## Deploy
-
-- [Gen ai mech-hackathon.vercel](https://gen-ai-mech-hackathon.vercel.app/)
+- [Live Demo](https://gen-ai-mech-hackathon.vercel.app/) *(replace with your own deployment link)*
 
 ## Overview
+This project is an AI-powered healthcare web application designed to provide **real-time disease detection** and **personalized preventive care**.  
+It uses machine learning models to diagnose diseases such as **asthma, cancer, diabetes, and stroke**, and offers a chatbot powered by a fine-tuned LLM for follow-up consultations.
 
-The Gen AI Hackathon project aims to utilize machine learning for healthcare by developing a web application that can detect various diseases such as asthma, cancer, diabetes, and stroke. The application provides real-time diagnosis based on predictive modeling. If a disease is detected, the user receives preventive measures and can engage in further conversation with a llm chatbot specialized in that disease.
+If a disease is detected, the user receives preventive measures along with interactive guidance from the chatbot.
 
-## Features
+## Key Features
+- 🩺 **Real-time disease detection** using trained ML models  
+- 💡 **Personalized preventive measures** for detected diseases  
+- 🤖 **LLM-powered chatbot** for further consultation  
+- 🔐 **Secure authentication** (sign-up & sign-in)  
+- 🖥 **User-friendly interface** with clear navigation  
 
-- Real-time disease detection using machine learning
-- Personalized preventive measures for detected diseases
-- Interactive llm chatbot for further consultation
-- User authentication with sign-up and sign-in functionality
-- Easy-to-use interface with intuitive navigation
+---
 
-## Step-by-Step Process in llm
+## How It Works
+1. User signs up or logs in.  
+2. Navigates to the **Diagnosis** page.  
+3. Fills out a form with required medical information.  
+4. The ML model predicts if the user has any of the listed diseases.  
+5. If positive, preventive measures are shown.  
+6. The user can chat with the AI doctor for more guidance.
 
-1. User signs up or signs in to the platform.
-2. On the home page, the user can navigate to the diagnosis page.
-3. In the diagnosis page, the user fills out a form providing necessary information.
-4. Based on the input, the application predicts whether the user has any of the specified diseases.
-5. If a disease is detected, preventive measures are provided to the user.
-6. The user can engage in further conversation with a disease-specific llm chatbot on the chat page.
+---
 
-## Unique Idea Brief
+## Unique Approach
+This project combines **diagnosis** and **recommendation**:
+- **Diagnosis:** Uses disease-specific ML models to analyze user-provided data.
+- **Recommendation:** Generates a detailed report including causes, symptoms, prescription suggestions, and lifestyle changes.
+- **AI Chatbot:** A fine-tuned medical LLM for general health-related queries.
 
-We have worked on both aspects of the problem statement, i.e, Disease Diagnosis , treatment Recommendation.
+---
 
-The disease diagnosis part consists of the identification of disease based on information received from user through form-filling. Then ML model specific to that disease is used for the diagnosis of the particular disease.
+## Demo Video
+[Watch Here](https://youtu.be/jwQfrptToTA)
 
-The recommendation process plans out a detailed report regarding causes, symptoms, medical prescription and changes to be made in living style.
-
-There is a LLM based chat-doctor finetuned on dataset (link mentioned at last), which can given guidance on general medical related questions.
-
-## [Video](https://youtu.be/jwQfrptToTA)
-
-<video width="100%" height="100%" controls autoplay>
-  <source src="https://www.youtube.com/watch?v=jwQfrptToTA" type="video/mp4">
-</video>
+---
 
 ## Workflow
+![Workflow](/image/explain.png)
 
-![WorkFlow](/image/explain.png)
+---
 
-## Frontend
+## Screenshots
 
-### Sign Up Page
-
-![1](/image/1.png)
+### Sign-Up Page
+![Sign Up](/image/1.png)
 
 ### Home Page
+![Home](/image/2.png)
 
-![2](/image/2.png)
+### Diagnosis Page
+![Diagnosis](/image/3.png)
 
-## Diagnosis Page
+### Form Page
+![Form](/image/4.png)
+![Form Page 2](/image/6.png)
+![Form Page 3](/image/7.png)
 
-![3](/image/3.png)
+### Chat Page
+![Chat](/image/5.png)
 
-## Form Page
-
-![4](/image/4.png)
-
-![6](/image/6.png)
-
-![7](/image/7.png)
-
-## Chat Page
-
-![5](/image/5.png)
+---
 
 ## Getting Started
 
-1. Clone the repository:
+### 1. Clone the Repository
+```bash
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
+````
 
-   ```bash
-   https://github.com/shivam6862/Gen-AI-Hackathon.git
-   cd Gen-AI-Hackathon
-   ```
-
-2. Install dependencies and Run the application:
-
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-
-3. Install dependencies and Run the application:
-
-   ```bash
-   cd backend
-   python -m venv env [for windows]
-   pip install -r requirements.txt
-   cd genaimechbackend
-   python manage.py runserver
-   ```
-
-4. Give .env in `backend/genaimechbackend/genaimechbackend/.env`
-
-   ```bash
-   HOST=
-   PROJECT_NAME=
-   DB_USERNAME=
-   PASSWORD=
-   SECRET_KEY=
-   ```
-
-5. Access the application at [port](http://localhost:3000)
-
-6. The finetuning is done on **Intel/Mistral-7B-v0.1-int4-inc**, the code for fine-tuning is written under medical_finetune.py. The file can be run using below command
+### 2. Run the Frontend
 
 ```bash
-python medical_finetune.py --bf16 True --use_ipex True --max_seq_length 512
+cd frontend
+npm install
+npm run dev
 ```
 
-## Finetuning
+### 3. Run the Backend
 
-- [Dataset](https://huggingface.co/datasets/heliosbrahma/mental_health_conversational_dataset)
-- [Model for finetuning](https://huggingface.co/Intel/Mistral-7B-v0.1-int4-inc)
-- [Check-points for Fine-tuned model](https://drive.google.com/drive/folders/13D68wowSkwtooYRJAfLYIQ3Q2T70F7hx)
-- scikit-learn-intelex
-  - [sklearnex](https://pypi.org/project/scikit-learn-intelex/)
-
-## Kaggle dataset
-
-- [Diabetes](https://www.kaggle.com/datasets/akshaydattatraykhare/diabetes-dataset)
-- [Asthma](https://www.kaggle.com/datasets/deepayanthakur/asthma-disease-prediction)
-- [Stroke](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
-- [Cancer](https://www.kaggle.com/datasets/mysarahmadbhat/lung-cancer)
-
-## Contributors
-
-- [Sarvagya Porwal](https://github.com/Sar2580P)
-- [Shivam Kumar](https://github.com/shivam6862)
-- [Puspendra Mahariya](https://github.com/silent-cipher)
-
-## TEAMID -
-
+```bash
+cd backend
+python -m venv env
+source env/bin/activate  # Mac/Linux
+env\Scripts\activate     # Windows
+pip install -r requirements.txt
+cd genaimechbackend
+python manage.py runserver
 ```
-Team name - genaimech
+
+### 4. Configure `.env`
+
+Create `.env` in `backend/genaimechbackend/genaimechbackend/`:
+
+```env
+HOST=
+PROJECT_NAME=
+DB_USERNAME=
+PASSWORD=
+SECRET_KEY=
 ```
+
+### 5. Access the App
+
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Model & Fine-Tuning
+
+* **Base model:** [Intel/Mistral-7B-v0.1-int4-inc](https://huggingface.co/Intel/Mistral-7B-v0.1-int4-inc)
+* **Fine-tuning dataset:** [Mental Health Conversational Dataset](https://huggingface.co/datasets/heliosbrahma/mental_health_conversational_dataset)
+* Run fine-tuning:
+
+```bash
+python medical_finetune.py --bf16 True --use_ipex True --max_seq_length 512
+```
+
+---
+
+## Datasets Used
+
+* [Diabetes Dataset](https://www.kaggle.com/datasets/akshaydattatraykhare/diabetes-dataset)
+* [Asthma Dataset](https://www.kaggle.com/datasets/deepayanthakur/asthma-disease-prediction)
+* [Stroke Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
+* [Lung Cancer Dataset](https://www.kaggle.com/datasets/mysarahmadbhat/lung-cancer)
+
+---
+
+## Author
+
+Developed by **\[Your Name]**
+GitHub: [your-username](https://github.com/your-username)
+Email: [your-email@example.com](mailto:your-email@example.com)
